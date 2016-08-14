@@ -193,7 +193,7 @@ namespace PoGo.PokeMobBot.Logic.Common
             new KeyValuePair<TranslationString, string>(TranslationString.EventPokemonEvolvedFailed,
                 "Failed {0}. Result was {1}, stopping evolving {2}"),
             new KeyValuePair<TranslationString, string>(TranslationString.EventPokemonTransferred,
-                "{0}\t- CP: {1}  IV: {2}%   [Best CP: {3}  IV: {4}%] (Candies: {5})"),
+                "{0,-12} - CP: {1,4}  IV: {2,6}%  [Best CP: {3,4}  IV: {4,6}%] (Candies: {5})"),
             new KeyValuePair<TranslationString, string>(TranslationString.EventItemRecycled, "{0}x {1}"),
             new KeyValuePair<TranslationString, string>(TranslationString.EventPokemonCapture,
                 "({0}) | {2}, Lvl: {3} | CP: ({4}/{5}) | IV: {6}% | Type: {1} | Chance: {7}% | Dist: {8}m | Used: {9} ({10} left) | XP: {11} | {12}"),
