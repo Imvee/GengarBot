@@ -159,7 +159,8 @@ namespace PoGo.PokeMobBot.Logic.Common
         PokemonUnFavorite, //added by Lars
         WalkingSpeedRandomized, //added by Lars
         StopBotToAvoidBan,
-        BotNotStoppedRiskOfBan
+        BotNotStoppedRiskOfBan,
+        PtcLoginFailed
     }
 
     public class Translation : ITranslation
@@ -245,6 +246,7 @@ namespace PoGo.PokeMobBot.Logic.Common
             new KeyValuePair<TranslationString, string>(TranslationString.LoggingIn, "Logging in using account {0}"),
             new KeyValuePair<TranslationString, string>(TranslationString.PtcOffline,
                 "PTC Servers are probably down OR your credentials are wrong. Try google"),
+            new KeyValuePair<TranslationString, string>(TranslationString.PtcLoginFailed, "Failed to login to Ptc. Possible ban check your phone!"),
             new KeyValuePair<TranslationString, string>(TranslationString.AccessTokenExpired,
                 "Access token expired. Relogin to get a new token."),
             new KeyValuePair<TranslationString, string>(TranslationString.TryingAgainIn,

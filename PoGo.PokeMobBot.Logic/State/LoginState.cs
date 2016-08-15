@@ -111,6 +111,19 @@ namespace PoGo.PokeMobBot.Logic.State
                 await Task.Delay(2000, cancellationToken);
                 Environment.Exit(0);
             }
+            catch (LoginFailedException)
+            {
+                session.EventDispatcher.Send(new ErrorEvent
+                {
+                    Message = session.Translation.GetTranslation(TranslationString.PtcLoginFailed)
+                });
+                session.EventDispatcher.Send(new NoticeEvent
+                {
+                    Message = session.Translation.GetTranslation(TranslationString.TryingAgainIn, 45)
+                });
+                await Task.Delay(45000, cancellationToken);
+                Environment.Exit(0);
+            }
             catch (Exception unhandeled)
             {
                 session.EventDispatcher.Send(new ErrorEvent
