@@ -921,7 +921,10 @@ namespace PoGo.PokeMobBot.Logic
         //display
         public bool DisplayPokemonMaxPoweredCp = true;
         public bool DisplayPokemonMovesetRank = true;
+        //Login exception
+        public bool StopBotToAvoidBanOnUnknownLoginError = true;
 
+        //humanized pathing
         public bool UseHumanPathing = true;
     }
 
@@ -1440,7 +1443,7 @@ namespace PoGo.PokeMobBot.Logic
                         settings.DelaySettings.DelayCatchNearbyPokemon = random.Next(settings.DelaySettings.MinRandomizeDelayMilliseconds, settings.DelaySettings.MaxRandomizeDelayMilliseconds);
                         settings.DelaySettings.DelayCatchLurePokemon = random.Next(settings.DelaySettings.MinRandomizeDelayMilliseconds, settings.DelaySettings.MaxRandomizeDelayMilliseconds);
                         settings.DelaySettings.DelayCatchIncensePokemon = random.Next(settings.DelaySettings.MinRandomizeDelayMilliseconds, settings.DelaySettings.MaxRandomizeDelayMilliseconds);
-                        settings.DelaySettings.DelayEvolvePokemon = random.Next(settings.DelaySettings.MinRandomizeDelayMilliseconds, settings.DelaySettings.MaxRandomizeDelayMilliseconds);
+                        //settings.DelaySettings.DelayEvolvePokemon = random.Next(settings.DelaySettings.MinRandomizeDelayMilliseconds, settings.DelaySettings.MaxRandomizeDelayMilliseconds); unused since we know how long it takes to evovle a pokemon
                         settings.DelaySettings.DelayTransferPokemon = random.Next(settings.DelaySettings.MinRandomizeDelayMilliseconds, settings.DelaySettings.MaxRandomizeDelayMilliseconds);
                         settings.DelaySettings.DelayDisplayPokemon = random.Next(settings.DelaySettings.MinRandomizeDelayMilliseconds, settings.DelaySettings.MaxRandomizeDelayMilliseconds);
                         settings.DelaySettings.DelayUseLuckyEgg = random.Next(settings.DelaySettings.MinRandomizeDelayMilliseconds, settings.DelaySettings.MaxRandomizeDelayMilliseconds);
@@ -1859,6 +1862,8 @@ namespace PoGo.PokeMobBot.Logic
         public int MinRandomizeDelayMilliseconds => _settings.DelaySettings.MinRandomizeDelayMilliseconds;
         public int MaxRandomizeDelayMilliseconds => _settings.DelaySettings.MaxRandomizeDelayMilliseconds;
         public bool ReRandomizeDelayOnStart => _settings.DelaySettings.ReRandomizeDelayOnStart;
+
+        public bool StopBotToAvoidBanOnUnknownLoginError => _settings.StartUpSettings.StopBotToAvoidBanOnUnknownLoginError;
 
     }
 

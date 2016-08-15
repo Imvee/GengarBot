@@ -90,6 +90,13 @@ namespace PoGo.PokeMobBot.Logic.Tasks
                             Message = session.Translation.GetTranslation(TranslationString.InvFullTransferManually)
                         });
                 }
+                else if (encounter.Status == EncounterResponse.Types.Status.EncounterPokemonFled)
+                {
+                    session.EventDispatcher.Send(new WarnEvent
+                    {
+                        Message = session.Translation.GetTranslation(TranslationString.EncounterProblemPokemonFlee, session.Translation.GetPokemonName(encounter.WildPokemon.PokemonData.PokemonId))
+                    });
+                }
                 else
                 {
                     session.EventDispatcher.Send(new WarnEvent
