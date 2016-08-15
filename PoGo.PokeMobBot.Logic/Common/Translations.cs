@@ -160,6 +160,7 @@ namespace PoGo.PokeMobBot.Logic.Common
         WalkingSpeedRandomized, //added by Lars
         StopBotToAvoidBan,
         BotNotStoppedRiskOfBan,
+        EncounterProblemPokemonFlee,
         PtcLoginFailed
     }
 
@@ -320,6 +321,7 @@ namespace PoGo.PokeMobBot.Logic.Common
             new KeyValuePair<TranslationString, string>(TranslationString.EncounterProblem, "Encounter problem: {0}"),
             new KeyValuePair<TranslationString, string>(TranslationString.EncounterProblemLurePokemon,
                 "Encounter problem: Lure Pokemon {0}"),
+            new KeyValuePair<TranslationString, string>(TranslationString.EncounterProblemPokemonFlee, "Encounter Pokemon Fled {0}!"),
             new KeyValuePair<TranslationString, string>(TranslationString.DesiredDestTooFar,
                 "Your desired destination of {0}, {1} is too far from your current position of {2}, {3}"),
             new KeyValuePair<TranslationString, string>(TranslationString.PokemonRename,
