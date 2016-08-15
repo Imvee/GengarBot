@@ -82,6 +82,10 @@ namespace PoGo.PokeMobBot.Logic.Tasks
 
                             if (pokeStop.LureInfo != null)
                             {
+                                session.EventDispatcher.Send(new DebugEvent()
+                                {
+                                    Message = "This pokestop has a lure!"
+                                });
                                 await CatchLurePokemonsTask.Execute(session, pokeStop.BaseFortData, cancellationToken);
                             }
 

@@ -51,6 +51,10 @@ namespace PoGo.PokeMobBot.Logic.Tasks
                 {
                     var pokemons = await session.MapCache.MapPokemons(session);
                     var pokemon = pokemons.FirstOrDefault(i => i.PokemonId == encounter.PokemonData.PokemonId);
+                    session.EventDispatcher.Send(new DebugEvent()
+                    {
+                        Message = "Found a Lure Pokemon."
+                    });
                     await CatchPokemonTask.Execute(session, encounter, pokemon, currentFortData, encounterId);
                 }
                 else if (encounter.Result == DiskEncounterResponse.Types.Result.PokemonInventoryFull)
