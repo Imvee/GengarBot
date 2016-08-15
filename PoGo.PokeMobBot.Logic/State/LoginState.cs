@@ -78,15 +78,6 @@ namespace PoGo.PokeMobBot.Logic.State
                 await Task.Delay(2000, cancellationToken);
                 Environment.Exit(0);
             }
-            catch (LoginFailedException)
-            {
-                session.EventDispatcher.Send(new ErrorEvent
-                {
-                    Message = session.Translation.GetTranslation(TranslationString.PtcLoginFailed)
-                });
-                await Task.Delay(5000, cancellationToken);
-                Environment.Exit(0);
-            }
             catch (GoogleException e)
             {
                 if (e.Message.Contains("NeedsBrowser"))

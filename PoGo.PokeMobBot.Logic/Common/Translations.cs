@@ -161,8 +161,7 @@ namespace PoGo.PokeMobBot.Logic.Common
         WalkingSpeedRandomized, //added by Lars
         StopBotToAvoidBan,
         BotNotStoppedRiskOfBan,
-        EncounterProblemPokemonFlee,
-        PtcLoginFailed
+        EncounterProblemPokemonFlee
     }
 
     public class Translation : ITranslation
@@ -248,7 +247,6 @@ namespace PoGo.PokeMobBot.Logic.Common
             new KeyValuePair<TranslationString, string>(TranslationString.LoggingIn, "Logging in using account {0}"),
             new KeyValuePair<TranslationString, string>(TranslationString.PtcOffline,
                 "PTC Servers are probably down OR your credentials are wrong. Try google"),
-            new KeyValuePair<TranslationString, string>(TranslationString.PtcLoginFailed, "Failed to login to Ptc. Possible ban check your phone!"),
             new KeyValuePair<TranslationString, string>(TranslationString.AccessTokenExpired,
                 "Access token expired. Relogin to get a new token."),
             new KeyValuePair<TranslationString, string>(TranslationString.TryingAgainIn,
@@ -256,7 +254,7 @@ namespace PoGo.PokeMobBot.Logic.Common
             new KeyValuePair<TranslationString, string>(TranslationString.AccountNotVerified,
                 "Account not verified! Exiting..."),
             new KeyValuePair<TranslationString, string>(TranslationString.PtcLoginFailed,
-                "PTC login failed. Make sure you have entered the right Email & Password. Exiting..."),
+                "PTC login failed. Make sure you have entered the right Email & Password. If you continue to get this, check your phone or Nox for a ban. Exiting..."),
             new KeyValuePair<TranslationString, string>(TranslationString.OpeningGoogleDevicePage,
                 "Opening Google Device page. Please paste the code using CTRL+V"),
             new KeyValuePair<TranslationString, string>(TranslationString.CouldntCopyToClipboard,
